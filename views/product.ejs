@@ -1,0 +1,501 @@
+<%- include('partials/htmlHead.ejs', {pageCss: "/styles/product.css"}) %>
+
+<body>
+
+    <div class="top-bar">
+        <%- include('partials/topBar.ejs') %>
+    </div>
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="products-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    EXPLORE THE CRAFT
+                </span>
+
+                <h1>
+                    Objects with a
+                    <span>story.</span>
+                </h1>
+
+                <p>
+                    Discover handcrafted products from traditional artisans
+                    and explore the people, places and processes behind them.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATALOGUE ================= -->
+
+        <section class="catalogue">
+
+            <div class="container">
+
+                <div class="catalogue-toolbar">
+
+                    <div>
+                        <span class="catalogue-count">
+                            Showing handcrafted products
+                        </span>
+
+                        <h2>All Crafts</h2>
+                    </div>
+
+
+                    <div class="catalogue-controls">
+
+                        <select>
+                            <option>All Categories</option>
+                            <option>Textiles</option>
+                            <option>Pottery</option>
+                            <option>Woodcraft</option>
+                            <option>Metalcraft</option>
+                            <option>Jewellery</option>
+                        </select>
+
+                        <select>
+                            <option>Latest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="catalogue-layout">
+
+                    <!-- FILTERS -->
+
+                    <aside class="catalogue-filters">
+
+                        <div class="filter-group">
+
+                            <h3>Craft Category</h3>
+
+                            <label>
+                                <input type="checkbox">
+                                Textiles
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Pottery
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Woodcraft
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Metalcraft
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Jewellery
+                            </label>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <h3>Origin</h3>
+
+                            <label>
+                                <input type="checkbox">
+                                Madhya Pradesh
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Chhattisgarh
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Rajasthan
+                            </label>
+
+                            <label>
+                                West Bengal
+                            </label>
+
+                        </div>
+
+
+                        <div class="filter-note">
+
+                            <strong>Looking for authenticity?</strong>
+
+                            <p>
+                                Product provenance is available from
+                                individual product pages.
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+
+                    <!-- PRODUCTS -->
+
+                    <div class="product-grid">
+
+
+                        <!-- PRODUCT 1 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/1"
+                               class="market-product-image">
+
+                                <span>TEXTILES</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Handloom</span>
+                                    <span>Chanderi</span>
+                                </div>
+
+                                <h3>
+                                    Traditional Handwoven Textile
+                                </h3>
+
+                                <p>
+                                    Handcrafted using traditional weaving
+                                    techniques.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹2,400
+                                    </strong>
+
+                                    <a href="/products/1">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 2 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/2"
+                               class="market-product-image pottery-image">
+
+                                <span>POTTERY</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Pottery</span>
+                                    <span>Raipur</span>
+                                </div>
+
+                                <h3>
+                                    Handcrafted Terracotta Vessel
+                                </h3>
+
+                                <p>
+                                    Traditional clay craft shaped and
+                                    finished by hand.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹850
+                                    </strong>
+
+                                    <a href="/products/2">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 3 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/3"
+                               class="market-product-image wood-image">
+
+                                <span>WOODCRAFT</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Woodcraft</span>
+                                    <span>Bastar</span>
+                                </div>
+
+                                <h3>
+                                    Traditional Wooden Sculpture
+                                </h3>
+
+                                <p>
+                                    Hand-carved using traditional
+                                    woodworking practices.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹1,800
+                                    </strong>
+
+                                    <a href="/products/3">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 4 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/4"
+                               class="market-product-image metal-image">
+
+                                <span>METALCRAFT</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Metalcraft</span>
+                                    <span>Bastar</span>
+                                </div>
+
+                                <h3>
+                                    Traditional Dhokra Figure
+                                </h3>
+
+                                <p>
+                                    A handcrafted metal object produced
+                                    using traditional techniques.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹3,200
+                                    </strong>
+
+                                    <a href="/products/4">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 5 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/5"
+                               class="market-product-image textile-image">
+
+                                <span>TEXTILES</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Handloom</span>
+                                    <span>Rajasthan</span>
+                                </div>
+
+                                <h3>
+                                    Handwoven Traditional Textile
+                                </h3>
+
+                                <p>
+                                    Woven using traditional patterns and
+                                    locally practiced techniques.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹1,950
+                                    </strong>
+
+                                    <a href="/products/5">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 6 -->
+
+                        <article class="market-product">
+
+                            <a href="/products/6"
+                               class="market-product-image jewellery-image">
+
+                                <span>JEWELLERY</span>
+
+                                <div class="provenance-badge">
+                                    ✓ Provenance
+                                </div>
+
+                            </a>
+
+
+                            <div class="market-product-content">
+
+                                <div class="product-meta">
+                                    <span>Metalcraft</span>
+                                    <span>Odisha</span>
+                                </div>
+
+                                <h3>
+                                    Traditional Handcrafted Jewellery
+                                </h3>
+
+                                <p>
+                                    Crafted by hand using traditional
+                                    metalworking techniques.
+                                </p>
+
+                                <div class="product-footer">
+
+                                    <strong>
+                                        ₹1,250
+                                    </strong>
+
+                                    <a href="/products/6">
+                                        View →
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRACEABILITY MESSAGE ================= -->
+
+        <section class="products-traceability">
+
+            <div class="container">
+
+                <div class="traceability-inner">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            LOOK BEYOND THE PRODUCT
+                        </span>
+
+                        <h2>
+                            Every product has
+                            <span>a provenance.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Open a product to discover information about its
+                        artisan, origin, materials and traditional
+                        production process.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div class="footer">
+        <%- include('partials/footer.ejs') %>
+    </div>
+
+</body>
+</html>

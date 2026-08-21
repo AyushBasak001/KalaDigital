@@ -5,7 +5,8 @@ import cookieParser from "cookie-parser";
 import {attachUser} from './middlewares/auth.js'
 import workRoutes from './routes/workRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import userRoutes from './routes/userRoutes.js';
+import productsRoutes from './routes/productsRoutes.js';
+import artisansRoutes from './routes/artisansRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -24,7 +25,8 @@ app.use(attachUser);
 // Routes
 app.use('/working' , workRoutes);
 app.use('/auth' , authRoutes);
-app.use('/user' , userRoutes);
+app.use('/products' , productsRoutes);
+app.use('/artisans' , artisansRoutes);
 app.use('/admin', adminRoutes);
 
 app.get("/", (req, res) => {

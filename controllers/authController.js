@@ -5,7 +5,7 @@ import { db } from '../utils/db.js';
 export const renderLoginPage = async (req, res) => {
   try {
     // 1. Render page
-    return res.render("login.ejs");
+    return res.render("auth.ejs");
 
   } catch (err) {
     console.error("GET /auth error:", err.message);

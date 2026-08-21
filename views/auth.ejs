@@ -1,0 +1,530 @@
+<%- include('partials/htmlHead.ejs', {pageCss: "/styles/auth.css"}) %>
+
+<body>
+
+    <div class="top-bar">
+        <%- include('partials/topBar.ejs') %>
+    </div>
+
+
+    <main class="auth-page">
+
+        <div class="auth-shell">
+
+
+            <!-- =====================================================
+                 BRAND / INTRODUCTION
+                 ===================================================== -->
+
+            <section class="auth-intro">
+
+                <div class="auth-intro-content">
+
+                    <a href="/" class="auth-logo">
+                        Kala<span>Digital</span>
+                    </a>
+
+                    <span class="eyebrow">
+                        TRADITION • CRAFT • PROVENANCE
+                    </span>
+
+                    <h1>
+                        Every craft has
+                        <span>a story.</span>
+                    </h1>
+
+                    <p>
+                        A digital marketplace connecting traditional
+                        artisans with customers while preserving the
+                        identity, origin and making process behind every
+                        handcrafted product.
+                    </p>
+
+
+                    <div class="auth-highlights">
+
+                        <div class="auth-highlight">
+
+                            <span class="highlight-number">
+                                01
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Discover
+                                </strong>
+
+                                <small>
+                                    Explore traditional crafts and artisans.
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-highlight">
+
+                            <span class="highlight-number">
+                                02
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Connect
+                                </strong>
+
+                                <small>
+                                    Support artisans by discovering their work.
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-highlight">
+
+                            <span class="highlight-number">
+                                03
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Verify
+                                </strong>
+
+                                <small>
+                                    Follow the provenance of a product.
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 AUTH CARD
+                 ===================================================== -->
+
+            <section class="auth-panel">
+
+                <div class="auth-card">
+
+
+                    <% if (locals.error) { %>
+
+                        <div class="auth-error">
+                            <strong>Unable to continue</strong>
+                            <span>
+                                <%= error %>
+                            </span>
+                        </div>
+
+                    <% } %>
+
+
+                    <div class="auth-heading">
+
+                        <span class="auth-mode-label">
+                            WELCOME BACK
+                        </span>
+
+                        <h2 class="form-title">
+                            Login
+                        </h2>
+
+                        <p id="auth-description">
+                            Sign in to continue to KalaDigital.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FORM
+                         ================================================= -->
+
+                    <form
+                        class="auth-form"
+                        method="POST"
+                        action="/auth/login"
+                    >
+
+                        <div class="form-field">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input
+                                id="username"
+                                class="value"
+                                type="text"
+                                name="username"
+                                placeholder="Enter your username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                id="password"
+                                class="value"
+                                type="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- LOGIN ONLY -->
+
+                        <div
+                            class="form-field role-field"
+                            id="login-role"
+                        >
+
+                            <label for="role">
+                                Account Type
+                            </label>
+
+                            <select
+                                id="role"
+                                class="value"
+                                name="role"
+                                required
+                            >
+
+                                <option value="">
+                                    Select account type
+                                </option>
+
+                                <option value="CUSTOMER">
+                                    Customer
+                                </option>
+
+                                <option value="ARTISAN">
+                                    Artisan
+                                </option>
+
+                                <option value="ADMIN">
+                                    Administrator
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             SIGNUP EXTRA FIELDS
+                             ================================================= -->
+
+                        <div
+                            class="signup-fields"
+                            id="signup-fields"
+                        >
+
+                            <div class="form-field">
+
+                                <label for="signup-role">
+                                    I want to join as
+                                </label>
+
+                                <select
+                                    id="signup-role"
+                                    class="value"
+                                    name="role"
+                                >
+
+                                    <option value="">
+                                        Select account type
+                                    </option>
+
+                                    <option value="CUSTOMER">
+                                        Customer
+                                    </option>
+
+                                    <option value="ARTISAN">
+                                        Artisan
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div
+                                class="form-field artisan-extra"
+                                id="artisan-extra"
+                            >
+
+                                <label for="craft">
+                                    Primary Craft
+                                </label>
+
+                                <input
+                                    id="craft"
+                                    class="value"
+                                    type="text"
+                                    name="craft"
+                                    placeholder="e.g. Pottery, Handloom, Woodcraft"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="auth-submit"
+                            type="submit"
+                        >
+                            Login
+                        </button>
+
+                    </form>
+
+
+                    <!-- =================================================
+                         TOGGLE
+                         ================================================= -->
+
+                    <div class="auth-toggle">
+
+                        <span id="toggle-text">
+                            Don't have an account?
+                        </span>
+
+                        <button
+                            type="button"
+                            id="toggle-btn"
+                            class="link-btn"
+                        >
+                            Create one
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PUBLIC ACCESS
+                         ================================================= -->
+
+                    <div class="auth-public">
+
+                        <a href="/products">
+                            Continue exploring crafts →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <div class="footer">
+        <%- include('partials/footer.ejs') %>
+    </div>
+
+
+<script>
+
+    const form = document.querySelector('.auth-form');
+
+    const title = document.querySelector('.form-title');
+
+    const description =
+        document.getElementById('auth-description');
+
+    const submitBtn =
+        form.querySelector('button[type="submit"]');
+
+    const toggleText =
+        document.getElementById('toggle-text');
+
+    const toggleBtn =
+        document.getElementById('toggle-btn');
+
+    const loginRole =
+        document.getElementById('login-role');
+
+    const signupFields =
+        document.getElementById('signup-fields');
+
+    const signupRole =
+        document.getElementById('signup-role');
+
+    const artisanExtra =
+        document.getElementById('artisan-extra');
+
+
+    let isSignup = false;
+
+
+    function setMode(signup) {
+
+        isSignup = signup;
+
+        form.classList.add('fade-out');
+
+
+        setTimeout(() => {
+
+            if (isSignup) {
+
+                /* FORM */
+
+                form.action = '/auth/signup';
+
+
+                /* HEADING */
+
+                title.innerText = 'Create account';
+
+                description.innerText =
+                    'Join KalaDigital and become part of the craft community.';
+
+
+                /* BUTTON */
+
+                submitBtn.innerText =
+                    'Create Account';
+
+
+                /* TOGGLE */
+
+                toggleText.innerText =
+                    'Already have an account?';
+
+                toggleBtn.innerText =
+                    'Login instead';
+
+
+                /* FIELDS */
+
+                loginRole.style.display =
+                    'none';
+
+                signupFields.style.display =
+                    'block';
+
+
+                signupRole.required = true;
+
+
+            } else {
+
+                /* FORM */
+
+                form.action = '/auth/login';
+
+
+                /* HEADING */
+
+                title.innerText = 'Login';
+
+                description.innerText =
+                    'Sign in to continue to KalaDigital.';
+
+
+                /* BUTTON */
+
+                submitBtn.innerText =
+                    'Login';
+
+
+                /* TOGGLE */
+
+                toggleText.innerText =
+                    "Don't have an account?";
+
+                toggleBtn.innerText =
+                    'Create one';
+
+
+                /* FIELDS */
+
+                loginRole.style.display =
+                    'block';
+
+                signupFields.style.display =
+                    'none';
+
+
+                signupRole.required = false;
+
+            }
+
+
+            form.classList.remove('fade-out');
+
+            form.classList.add('fade-in');
+
+
+        }, 180);
+
+    }
+
+
+    toggleBtn.addEventListener(
+        'click',
+        () => setMode(!isSignup)
+    );
+
+
+    /*
+     * Show craft field only when
+     * ARTISAN is selected.
+     */
+
+    signupRole.addEventListener(
+        'change',
+        () => {
+
+            if (signupRole.value === 'ARTISAN') {
+
+                artisanExtra.style.display =
+                    'block';
+
+            } else {
+
+                artisanExtra.style.display =
+                    'none';
+
+            }
+
+        }
+    );
+
+
+    /*
+     * Initial state
+     */
+
+    signupFields.style.display = 'none';
+
+</script>
+
+</body>
+</html>
