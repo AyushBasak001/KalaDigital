@@ -1,0 +1,122 @@
+<%- include('partials/htmlHead.ejs', {pageCss: "/styles/home.css"}) %>
+
+<body>
+    <div class="top-bar">
+        <%- include('partials/topBar.ejs') %>
+    </div>
+
+    <div class="extended-content">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <h1>KalaDigital</h1>
+                <p>
+                    A simple marketplace platform where users can list items,
+                    place orders, and experience a moderated buying and selling workflow.
+                </p>
+
+                <a href="/auth">Login to Continue</a>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about">
+            <div class="container">
+                <h2>About KalaDigital</h2>
+                <p>
+                    KalaDigital is an educational web application designed to demonstrate
+                    the workflow of a moderated online marketplace.
+                </p>
+
+                <p>
+                    Users can list products, place orders, and interact within a system
+                    where administrators review and manage transactions.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section>
+            <div class="container">
+                <h2>How It Works</h2>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <h3>1. List a Product</h3>
+                        <p>Users create product listings for items they want to sell.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>2. Place an Order</h3>
+                        <p>Buyers can place orders on available products.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>3. Admin Review</h3>
+                        <p>The administrator reviews and approves transactions.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>4. Order Completion</h3>
+                        <p>The admin manages final confirmation and delivery workflow.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="categories">
+            <div class="container">
+                <h2>Example Categories</h2>
+
+                <div class="category-grid">
+                    <div class="category">Clothes</div>
+                    <div class="category">Electronics</div>
+                    <div class="category">Furniture</div>
+                    <div class="category">Kitchen</div>
+                    <div class="category">Stationary</div>
+                    <div class="category">Others</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DISCLAIMER -->
+        <section class="disclaimer">
+            <div class="container">
+                <h2>Educational Notice</h2>
+                <p>
+                    KalaDigital is a demonstration platform created strictly for
+                    educational purposes. No real payments, transactions, or
+                    deliveries are performed on this website.
+                </p>
+
+                <p>
+                    All listings, users, and activities shown on the platform
+                    are simulated to demonstrate marketplace functionality.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>Start Exploring KalaDigital</h2>
+                <p>Login to access the platform and explore its features.</p>
+
+                <a href="/auth">Login</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <%- include('partials/footer.ejs') %>
+    </div>
+</body>
+</html>

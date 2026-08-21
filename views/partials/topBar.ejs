@@ -1,0 +1,26 @@
+<nav>
+    <div class="brand">
+        <a href="/" class="brand-name">KalaDigital</a>
+    </div>
+
+    <div class="auth">
+        <% if (locals.user) { %>
+
+            <% if (locals.user.role === 'USER') { %>
+                <a href="/user/profile" class="user">
+                    <p class="user-name"><%= locals.user.username %></p>
+                    <p class="user-role"><%= locals.user.role %></p>
+                </a>
+            <% } else if (locals.user.role === 'ADMIN') { %>
+                <a href="/admin/profile" class="user">
+                    <p class="user-name"><%= locals.user.username %></p>
+                    <p class="user-role"><%= locals.user.role %></p>
+                </a>
+            <% } %>
+
+        <% } else { %>
+            <a href="/auth" class="login-link">Login</a>
+        <% } %>
+    </div>
+
+</nav>
