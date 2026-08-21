@@ -34,7 +34,16 @@
 
 
         <div class="nav-actions">
+            <% if (locals.user) { %>
+                <form action="/auth/logout" method="POST">
+                    <button class="nav-logout" type="submit">Logout</button>
+                </form>
 
+                <a href="/" class="nav-cta">
+                    <%= locals.user.username %>
+                </a>
+
+            <% } else { %>
             <a href="/auth" class="nav-login">
                 Login
             </a>
@@ -43,6 +52,7 @@
                 Enter KalaDigital
                 <span>→</span>
             </a>
+            <% } %>
 
         </div>
 

@@ -12,9 +12,7 @@
         <div class="auth-shell">
 
 
-            <!-- =====================================================
-                 BRAND / INTRODUCTION
-                 ===================================================== -->
+            <!-- BRAND / INTRODUCTION -->
 
             <section class="auth-intro">
 
@@ -106,9 +104,7 @@
             </section>
 
 
-            <!-- =====================================================
-                 AUTH CARD
-                 ===================================================== -->
+            <!-- AUTH CARD -->
 
             <section class="auth-panel">
 
@@ -144,9 +140,7 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FORM
-                         ================================================= -->
+                    <!-- FORM -->
 
                     <form
                         class="auth-form"
@@ -192,12 +186,10 @@
                         </div>
 
 
-                        <!-- LOGIN ONLY -->
+                                            
+                        <!-- ROLE -->
 
-                        <div
-                            class="form-field role-field"
-                            id="login-role"
-                        >
+                        <div class="form-field role-field">
 
                             <label for="role">
                                 Account Type
@@ -222,71 +214,14 @@
                                     Artisan
                                 </option>
 
-                                <option value="ADMIN">
+                                <option
+                                    value="ADMIN"
+                                    id="admin-role"
+                                >
                                     Administrator
                                 </option>
 
                             </select>
-
-                        </div>
-
-
-                        <!-- =================================================
-                             SIGNUP EXTRA FIELDS
-                             ================================================= -->
-
-                        <div
-                            class="signup-fields"
-                            id="signup-fields"
-                        >
-
-                            <div class="form-field">
-
-                                <label for="signup-role">
-                                    I want to join as
-                                </label>
-
-                                <select
-                                    id="signup-role"
-                                    class="value"
-                                    name="role"
-                                >
-
-                                    <option value="">
-                                        Select account type
-                                    </option>
-
-                                    <option value="CUSTOMER">
-                                        Customer
-                                    </option>
-
-                                    <option value="ARTISAN">
-                                        Artisan
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div
-                                class="form-field artisan-extra"
-                                id="artisan-extra"
-                            >
-
-                                <label for="craft">
-                                    Primary Craft
-                                </label>
-
-                                <input
-                                    id="craft"
-                                    class="value"
-                                    type="text"
-                                    name="craft"
-                                    placeholder="e.g. Pottery, Handloom, Woodcraft"
-                                >
-
-                            </div>
 
                         </div>
 
@@ -301,9 +236,7 @@
                     </form>
 
 
-                    <!-- =================================================
-                         TOGGLE
-                         ================================================= -->
+                    <!-- TOGGLE -->
 
                     <div class="auth-toggle">
 
@@ -366,17 +299,11 @@
     const toggleBtn =
         document.getElementById('toggle-btn');
 
-    const loginRole =
-        document.getElementById('login-role');
+    const role =
+        document.getElementById('role');
 
-    const signupFields =
-        document.getElementById('signup-fields');
-
-    const signupRole =
-        document.getElementById('signup-role');
-
-    const artisanExtra =
-        document.getElementById('artisan-extra');
+    const adminRole =
+        document.getElementById('admin-role');
 
 
     let isSignup = false;
@@ -421,16 +348,17 @@
                     'Login instead';
 
 
-                /* FIELDS */
 
-                loginRole.style.display =
+                /* ROLE */
+
+                adminRole.style.display =
                     'none';
 
-                signupFields.style.display =
-                    'block';
+                /* If ADMIN was selected before switching, reset the role selection. */
 
-
-                signupRole.required = true;
+                if (role.value === 'ADMIN') {
+                    role.value = '';
+                }
 
 
             } else {
@@ -462,17 +390,10 @@
                 toggleBtn.innerText =
                     'Create one';
 
+                /* ROLE */
 
-                /* FIELDS */
-
-                loginRole.style.display =
-                    'block';
-
-                signupFields.style.display =
-                    'none';
-
-
-                signupRole.required = false;
+                adminRole.style.display =
+                    '';
 
             }
 
