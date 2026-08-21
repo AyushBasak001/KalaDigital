@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from "cookie-parser";
 import {attachUser} from './middlewares/auth.js'
+import workRoutes from './routes/workRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(attachUser);
 
 // Routes
+app.use('/working' , workRoutes);
 app.use('/auth' , authRoutes);
 app.use('/user' , userRoutes);
 app.use('/admin', adminRoutes);

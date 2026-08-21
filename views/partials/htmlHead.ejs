@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Common CSS -->
+    <title>KalaDigital</title>
+
     <link rel="stylesheet" href="/styles/main.css">
 
-    <!-- Page-specific CSS -->
-    <% if (typeof pageCss !== "undefined") { %>
+    <% if (pageCss) { %>
         <link rel="stylesheet" href="<%= pageCss %>">
     <% } %>
-
-    <title>TradeNest</title>
 </head>

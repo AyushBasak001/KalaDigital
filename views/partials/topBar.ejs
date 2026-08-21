@@ -1,26 +1,58 @@
-<nav>
-    <div class="brand">
-        <a href="/" class="brand-name">KalaDigital</a>
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <a href="/" class="brand">
+            <span class="brand-mark">K</span>
+
+            <span class="brand-text">
+                <strong>KalaDigital</strong>
+                <small>CRAFT • CULTURE • CONNECTION</small>
+            </span>
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="/" class="nav-link active">
+                Home
+            </a>
+
+            <a href="/products" class="nav-link">
+                Explore Crafts
+            </a>
+
+            <a href="/artisans" class="nav-link">
+                Artisans
+            </a>
+
+            <a href="/working" class="nav-link">
+                How it Works
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a href="/auth" class="nav-login">
+                Login
+            </a>
+
+            <a href="/auth" class="nav-cta">
+                Enter KalaDigital
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <button class="mobile-menu" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </div>
 
-    <div class="auth">
-        <% if (locals.user) { %>
-
-            <% if (locals.user.role === 'USER') { %>
-                <a href="/user/profile" class="user">
-                    <p class="user-name"><%= locals.user.username %></p>
-                    <p class="user-role"><%= locals.user.role %></p>
-                </a>
-            <% } else if (locals.user.role === 'ADMIN') { %>
-                <a href="/admin/profile" class="user">
-                    <p class="user-name"><%= locals.user.username %></p>
-                    <p class="user-role"><%= locals.user.role %></p>
-                </a>
-            <% } %>
-
-        <% } else { %>
-            <a href="/auth" class="login-link">Login</a>
-        <% } %>
-    </div>
-
-</nav>
+</header>

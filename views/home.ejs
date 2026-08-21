@@ -1,122 +1,499 @@
 <%- include('partials/htmlHead.ejs', {pageCss: "/styles/home.css"}) %>
 
-<body>
+<body id="top">
+
     <div class="top-bar">
         <%- include('partials/topBar.ejs') %>
     </div>
 
-    <div class="extended-content">
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>KalaDigital</h1>
-                <p>
-                    A simple marketplace platform where users can list items,
-                    place orders, and experience a moderated buying and selling workflow.
-                </p>
+    <main>
 
-                <a href="/auth">Login to Continue</a>
-            </div>
-        </section>
+        <!-- ================= HERO ================= -->
+        <section class="home-hero">
+            <div class="home-hero-pattern"></div>
 
+            <div class="container home-hero-grid">
 
-        <!-- ABOUT -->
-        <section class="about">
-            <div class="container">
-                <h2>About KalaDigital</h2>
-                <p>
-                    KalaDigital is an educational web application designed to demonstrate
-                    the workflow of a moderated online marketplace.
-                </p>
+                <div class="home-hero-content">
 
-                <p>
-                    Users can list products, place orders, and interact within a system
-                    where administrators review and manage transactions.
-                </p>
-            </div>
-        </section>
+                    <span class="eyebrow">
+                        TRADITION • CRAFT • AUTHENTICITY
+                    </span>
 
+                    <h1>
+                        Every craft has a
+                        <span>story.</span>
+                    </h1>
 
-        <!-- HOW IT WORKS -->
-        <section>
-            <div class="container">
-                <h2>How It Works</h2>
+                    <p>
+                        Discover handcrafted products and the artisans
+                        behind them. KalaDigital connects traditional
+                        craftsmanship with a digital marketplace built
+                        around authenticity and provenance.
+                    </p>
 
-                <div class="steps">
+                    <div class="hero-actions">
+                        <a href="/products" class="btn btn-primary">
+                            Explore Crafts
+                        </a>
 
-                    <div class="step">
-                        <h3>1. List a Product</h3>
-                        <p>Users create product listings for items they want to sell.</p>
+                        <a href="/artisans" class="btn btn-outline">
+                            Explore Artisans
+                        </a>
                     </div>
 
-                    <div class="step">
-                        <h3>2. Place an Order</h3>
-                        <p>Buyers can place orders on available products.</p>
-                    </div>
+                    <div class="home-trust">
 
-                    <div class="step">
-                        <h3>3. Admin Review</h3>
-                        <p>The administrator reviews and approves transactions.</p>
-                    </div>
+                        <div>
+                            <strong>Verified</strong>
+                            <span>Artisans</span>
+                        </div>
 
-                    <div class="step">
-                        <h3>4. Order Completion</h3>
-                        <p>The admin manages final confirmation and delivery workflow.</p>
+                        <div>
+                            <strong>Traceable</strong>
+                            <span>Products</span>
+                        </div>
+
+                        <div>
+                            <strong>Documented</strong>
+                            <span>Craft Processes</span>
+                        </div>
+
                     </div>
 
                 </div>
+
+
+                <div class="home-hero-art">
+
+                    <div class="hero-product-card">
+
+                        <div class="hero-product-image">
+                            <span>✦</span>
+                            <small>HANDCRAFTED</small>
+                        </div>
+
+                        <div class="hero-product-info">
+                            <span>Featured Craft</span>
+                            <strong>Traditional Handloom</strong>
+                            <small>Chanderi, Madhya Pradesh</small>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-floating-card provenance-float">
+                        <span class="status-icon">✓</span>
+
+                        <div>
+                            <strong>Provenance Recorded</strong>
+                            <small>Origin & artisan documented</small>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
 
-        <!-- CATEGORIES -->
-        <section class="categories">
+        <!-- ================= INTRO ================= -->
+        <section class="home-intro">
+
+            <div class="container intro-grid">
+
+                <div class="section-marker">
+                    <span>01</span>
+                    <small>WHY KALADIGITAL</small>
+                </div>
+
+                <div class="intro-content">
+
+                    <h2>
+                        More than a marketplace.
+                        <em>A digital identity for every craft.</em>
+                    </h2>
+
+                    <p>
+                        Traditional artisans often struggle to reach customers
+                        beyond their local communities. Buyers, meanwhile,
+                        have limited ways to understand who made a product,
+                        where it came from, or how it was created.
+                    </p>
+
+                    <p>
+                        KalaDigital brings these two sides together by giving
+                        artisans a digital presence while connecting each
+                        product with information about its maker, origin and
+                        traditional craft process.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+        <section class="home-features">
+
             <div class="container">
-                <h2>Example Categories</h2>
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        THE KALADIGITAL EXPERIENCE
+                    </span>
+
+                    <h2>
+                        Craft you can
+                        <span>understand.</span>
+                    </h2>
+
+                    <p>
+                        Every product carries more than a price.
+                        It carries information about its story.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <span class="feature-icon">♙</span>
+                        <span class="feature-number">01</span>
+
+                        <h3>Artisan Profiles</h3>
+
+                        <p>
+                            Learn about the people behind traditional
+                            craftsmanship, their skills and their work.
+                        </p>
+
+                        <a href="/artisans">
+                            Meet Artisans →
+                        </a>
+
+                    </article>
+
+
+                    <article class="feature-card featured">
+
+                        <span class="feature-icon">◇</span>
+                        <span class="feature-number">02</span>
+
+                        <h3>Product Provenance</h3>
+
+                        <p>
+                            Product information connects an item with its
+                            artisan, origin, materials and craft process.
+                        </p>
+
+                        <a href="/products">
+                            Explore Products →
+                        </a>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-icon">✦</span>
+                        <span class="feature-number">03</span>
+
+                        <h3>Craft Process</h3>
+
+                        <p>
+                            Discover the traditional techniques and processes
+                            involved in creating handcrafted products.
+                        </p>
+
+                        <a href="/products">
+                            See the Craft →
+                        </a>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-number">04</span>
+
+                        <h3>Moderated Listings</h3>
+
+                        <p>
+                            Structured product information and administrative
+                            review help reduce misleading representation.
+                        </p>
+
+                        <a href="/working">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURED PRODUCTS ================= -->
+        <section class="featured-products">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        DISCOVER THE CRAFT
+                    </span>
+
+                    <h2>
+                        Featured
+                        <span>handcrafted products.</span>
+                    </h2>
+
+                    <p>
+                        Explore products and discover the stories behind them.
+                    </p>
+
+                </div>
+
+
+                <div class="product-preview-grid">
+
+                    <a href="/products" class="product-preview">
+
+                        <div class="product-preview-image">
+                            <span>TEXTILES</span>
+                        </div>
+
+                        <div class="product-preview-info">
+                            <span>Traditional Craft</span>
+                            <h3>Handwoven Textile</h3>
+                            <small>View product →</small>
+                        </div>
+
+                    </a>
+
+
+                    <a href="/products" class="product-preview">
+
+                        <div class="product-preview-image pottery">
+                            <span>POTTERY</span>
+                        </div>
+
+                        <div class="product-preview-info">
+                            <span>Traditional Craft</span>
+                            <h3>Handcrafted Pottery</h3>
+                            <small>View product →</small>
+                        </div>
+
+                    </a>
+
+
+                    <a href="/products" class="product-preview">
+
+                        <div class="product-preview-image woodcraft">
+                            <span>WOODCRAFT</span>
+                        </div>
+
+                        <div class="product-preview-info">
+                            <span>Traditional Craft</span>
+                            <h3>Traditional Woodcraft</h3>
+                            <small>View product →</small>
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <div class="center-action">
+                    <a href="/products" class="btn btn-primary">
+                        Explore All Crafts →
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+        <section class="home-categories">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        EXPLORE TRADITIONS
+                    </span>
+
+                    <h2>
+                        Discover
+                        <span>traditional crafts.</span>
+                    </h2>
+
+                </div>
+
 
                 <div class="category-grid">
-                    <div class="category">Clothes</div>
-                    <div class="category">Electronics</div>
-                    <div class="category">Furniture</div>
-                    <div class="category">Kitchen</div>
-                    <div class="category">Stationary</div>
-                    <div class="category">Others</div>
+
+                    <a href="/categories/textiles" class="category-card">
+                        <span>01</span>
+                        <h3>Textiles</h3>
+                        <p>Handloom & traditional weaving</p>
+                        <strong>→</strong>
+                    </a>
+
+                    <a href="/categories/pottery" class="category-card">
+                        <span>02</span>
+                        <h3>Pottery</h3>
+                        <p>Clay, terracotta & ceramics</p>
+                        <strong>→</strong>
+                    </a>
+
+                    <a href="/categories/woodcraft" class="category-card">
+                        <span>03</span>
+                        <h3>Woodcraft</h3>
+                        <p>Carving & traditional woodwork</p>
+                        <strong>→</strong>
+                    </a>
+
+                    <a href="/categories/metalcraft" class="category-card">
+                        <span>04</span>
+                        <h3>Metalcraft</h3>
+                        <p>Traditional metalworking</p>
+                        <strong>→</strong>
+                    </a>
+
                 </div>
+
             </div>
+
         </section>
 
 
-        <!-- DISCLAIMER -->
-        <section class="disclaimer">
+        <!-- ================= ARTISANS ================= -->
+        <section class="home-artisans">
+
+            <div class="container artisans-grid">
+
+                <div>
+
+                    <span class="eyebrow">
+                        THE PEOPLE BEHIND THE CRAFT
+                    </span>
+
+                    <h2>
+                        Meet the
+                        <span>artisans.</span>
+                    </h2>
+
+                    <p>
+                        Traditional craftsmanship lives through the people
+                        who practice it. Discover the makers behind the
+                        products on KalaDigital.
+                    </p>
+
+                    <a href="/artisans" class="text-link">
+                        Meet All Artisans →
+                    </a>
+
+                </div>
+
+
+                <div class="artisan-preview-grid">
+
+                    <a href="/artisans" class="artisan-preview">
+                        <div class="artisan-image">ARTISAN</div>
+                        <strong>Artisan Profile</strong>
+                        <small>Traditional Craft</small>
+                    </a>
+
+                    <a href="/artisans" class="artisan-preview">
+                        <div class="artisan-image second">ARTISAN</div>
+                        <strong>Artisan Profile</strong>
+                        <small>Traditional Craft</small>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SMALL WORKFLOW TEASER ================= -->
+        <section class="home-workflow-teaser">
+
             <div class="container">
-                <h2>Educational Notice</h2>
+
+                <span class="eyebrow">
+                    HOW KALADIGITAL WORKS
+                </span>
+
+                <h2>
+                    Discover the craft.
+                    Understand its story.
+                    <span>Buy with confidence.</span>
+                </h2>
+
                 <p>
-                    KalaDigital is a demonstration platform created strictly for
-                    educational purposes. No real payments, transactions, or
-                    deliveries are performed on this website.
+                    Artisans document their products, administrators review
+                    listings, and customers can explore the information
+                    behind the crafts they discover.
                 </p>
 
-                <p>
-                    All listings, users, and activities shown on the platform
-                    are simulated to demonstrate marketplace functionality.
-                </p>
+                <a href="/working" class="btn btn-outline">
+                    See How It Works →
+                </a>
+
             </div>
+
         </section>
 
 
-        <!-- CTA -->
-        <section class="cta">
+        <!-- ================= FINAL CTA ================= -->
+        <section class="home-cta">
+
             <div class="container">
-                <h2>Start Exploring KalaDigital</h2>
-                <p>Login to access the platform and explore its features.</p>
 
-                <a href="/auth">Login</a>
+                <span class="eyebrow">
+                    PRESERVE • CONNECT • DISCOVER
+                </span>
+
+                <h2>
+                    Give traditional craft
+                    <span>a digital future.</span>
+                </h2>
+
+                <p>
+                    Explore handcrafted products and discover the people
+                    and traditions behind them.
+                </p>
+
+                <a href="/products" class="btn btn-light">
+                    Explore Crafts →
+                </a>
+
             </div>
+
         </section>
-    </div>
+
+    </main>
+
 
     <div class="footer">
         <%- include('partials/footer.ejs') %>
     </div>
+
 </body>
 </html>
