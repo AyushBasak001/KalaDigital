@@ -39,9 +39,19 @@
                     <button class="nav-logout" type="submit">Logout</button>
                 </form>
 
-                <a href="/" class="nav-cta">
-                    <%= locals.user.username %>
-                </a>
+                <% if (locals.user.role === 'ADMIN') { %>
+                    <a href="/admin/dashboard" class="nav-cta">
+                        <%= locals.user.username %>
+                    </a>
+                <% } else if (locals.user.role === 'CUSTOMER') { %>
+                    <a href="/customers/dashboard" class="nav-cta">
+                        <%= locals.user.username %>
+                    </a>
+                <% } else if (locals.user.role === 'ARTISAN') { %>
+                    <a href="/artisans/dashboard" class="nav-cta">
+                        <%= locals.user.username %>
+                    </a>
+                <% } %>
 
             <% } else { %>
             <a href="/auth" class="nav-login">

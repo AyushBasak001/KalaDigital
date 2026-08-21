@@ -7,7 +7,7 @@ import workRoutes from './routes/workRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import productsRoutes from './routes/productsRoutes.js';
 import artisansRoutes from './routes/artisansRoutes.js';
-// import customersRoutes from './routes/customersRoutes.js';
+import customersRoutes from './routes/customersRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -28,7 +28,7 @@ app.use('/working' , workRoutes);
 app.use('/auth' , authRoutes);
 app.use('/products' , productsRoutes);
 app.use('/artisans' , artisansRoutes);
-// app.use('/customers' , customersRoutes);
+app.use('/customers' , customersRoutes);
 app.use('/admin', adminRoutes);
 
 app.get("/", (req, res) => {

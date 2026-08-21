@@ -52,9 +52,9 @@ export const login = async (req, res) => {
         maxAge: 60 * 60 * 1000 // 1 hour
     });
 
-    if(role === 'ARTISAN') return res.redirect("/"); 
-    else if(role === 'CUSTOMER') return res.redirect("/");
-    else if(role === 'ADMIN') return res.redirect("/");
+    if(role === 'ARTISAN') return res.redirect("/artisans/dashboard"); 
+    else if(role === 'CUSTOMER') return res.redirect("/customers/dashboard");
+    else if(role === 'ADMIN') return res.redirect("/admin/dashboard");
 }
 
 export const signup = async (req, res) => {
@@ -80,31 +80,4 @@ export const signup = async (req, res) => {
 export const logout = async (req, res) => {
     res.clearCookie("auth_token");
     res.redirect("/");
-}
-
-
-//Helper Functions
-
-async function signupQuery(res, username, role, hash){
-    // Using a transaction for atomicity
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-
-        const userRes = await client.query(
-            `INSERT INTO users (username, password_hash, role)
-            VALUES ($1, $2, $3)`,
-            [username, hash, role]
-        );
-
-        await client.query('COMMIT');
-        
-        res.redirect("/auth/");
-    } catch (error) {
-        await client.query('ROLLBACK');
-        console.error("Signup Error:", error);
-        res.status(500).send("Registration failed.");
-    } finally {
-        client.release();
-    }
 }

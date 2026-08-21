@@ -1,0 +1,23 @@
+<script>
+
+    const sidebarToggle =
+        document.getElementById("sidebarToggle");
+
+    const sidebar =
+        document.getElementById("dashboardSidebar");
+
+
+    if (sidebarToggle && sidebar) {
+
+        sidebarToggle.addEventListener("click", () => {
+
+            sidebar.classList.toggle("collapsed");
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

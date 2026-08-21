@@ -1,0 +1,57 @@
+<header class="dashboard-topbar">
+
+    <div class="topbar-left">
+
+        <button
+            class="sidebar-toggle"
+            type="button"
+            aria-label="Toggle sidebar"
+            id="sidebarToggle"
+        >
+            ☰
+        </button>
+
+        <a
+            href="/"
+            class="dashboard-logo"
+        >
+            KalaDigital
+        </a>
+
+    </div>
+
+
+    <div class="topbar-right">
+
+        <button
+            type="button"
+            class="notification-button"
+            aria-label="Notifications"
+        >
+            ♡
+        </button>
+
+
+        <div class="user-menu">
+
+            <div class="user-avatar">
+                <%= user.username.charAt(0).toUpperCase() %>
+            </div>
+
+            <div class="user-info">
+
+                <span class="user-name">
+                    <%= user.username %>
+                </span>
+
+                <span class="user-role">
+                    Customer
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
