@@ -33,67 +33,92 @@
         </section>
 
 
-        <!-- ================= FEATURED ARTISAN ================= -->
+        <% if (featuredArtisan) { %>
 
-        <section class="featured-artisan">
+            <!-- ================= FEATURED ARTISAN ================= -->
 
-            <div class="container featured-artisan-grid">
+            <section class="featured-artisan">
 
-                <div class="featured-artisan-image">
-                    <span>FEATURED ARTISAN</span>
-                </div>
+                <div class="container featured-artisan-grid">
 
+                    <div class="featured-artisan-image">
 
-                <div class="featured-artisan-content">
+                        <% if (featuredArtisan.profile_image) { %>
 
-                    <span class="eyebrow">
-                        ARTISAN SPOTLIGHT
-                    </span>
+                            <img
+                                src="<%= featuredArtisan.profile_image %>"
+                                alt="<%= featuredArtisan.display_name %>"
+                            >
 
-                    <h2>
-                        The hands behind
-                        <span>the tradition.</span>
-                    </h2>
+                        <% } else { %>
 
-                    <div class="artisan-location">
-                        Bastar, Chhattisgarh
-                    </div>
+                            <span>FEATURED ARTISAN</span>
 
-                    <p>
-                        Discover the work of artisans who continue
-                        traditional craft practices and bring them
-                        to a wider audience through KalaDigital.
-                    </p>
-
-                    <div class="artisan-stats">
-
-                        <div>
-                            <strong>12+</strong>
-                            <small>Products</small>
-                        </div>
-
-                        <div>
-                            <strong>15</strong>
-                            <small>Years of Craft</small>
-                        </div>
-
-                        <div>
-                            <strong>1</strong>
-                            <small>Tradition</small>
-                        </div>
+                        <% } %>
 
                     </div>
 
-                    <a href="/artisans/1"
-                       class="btn btn-primary">
-                        View Artisan Profile →
-                    </a>
+
+                    <div class="featured-artisan-content">
+
+                        <span class="eyebrow">
+                            ARTISAN SPOTLIGHT
+                        </span>
+
+                        <h2>
+                            The hands behind
+                            <span>the tradition.</span>
+                        </h2>
+
+                        <div class="artisan-display_name">
+                            <%= featuredArtisan.display_name %>
+                        </div>
+
+                        <p>
+                            <%= featuredArtisan.bio %>
+                        </p>
+
+
+                        <div class="artisan-stats">
+
+                            <div>
+                                <strong>
+                                    <%= featuredArtisan.years_of_experience %>+
+                                </strong>
+                                <small>Years of Craft</small>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    <%= featuredArtisan.craft_speciality %>
+                                </strong>
+                                <small>Craft</small>
+                            </div>
+
+                            <% if (featuredArtisan.verification_status === 'VERIFIED') { %>
+                                <div>
+                                    <strong>✓</strong>
+                                    <small>Verified</small>
+                                </div>
+                            <% } %>
+
+                        </div>
+
+
+                        <a
+                            href="/artisans/<%= featuredArtisan.id %>"
+                            class="btn btn-primary"
+                        >
+                            View Artisan Profile →
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+        <% } %>
 
 
         <!-- ================= DIRECTORY ================= -->
@@ -134,305 +159,61 @@
 
                 <div class="artisan-grid">
 
+                    <% artisanList.forEach(artisan => { %>
 
-                    <!-- ARTISAN 1 -->
+                        <article class="artisan-card">
 
-                    <article class="artisan-card">
+                            <a href="/artisans/<%= artisan.id %>"
+                            class="artisan-card-image">
 
-                        <a href="/artisans/1"
-                           class="artisan-card-image">
+                                <img
+                                    src="<%= artisan.profile_image %>"
+                                    alt="<%= artisan.display_name %>"
+                                >
 
-                            <span>ARTISAN</span>
+                                <% if (artisan.verification_status === 'VERIFIED') { %>
+                                    <div class="verified-mark">
+                                        ✓
+                                    </div>
+                                <% } %>
 
-                            <div class="verified-mark">
-                                ✓
-                            </div>
+                            </a>
 
-                        </a>
+                            <div class="artisan-card-content">
 
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                WOODCRAFT
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Bastar, Chhattisgarh
-                            </div>
-
-                            <p>
-                                Traditional woodcraft and hand carving.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    8 Products
+                                <span class="artisan-craft">
+                                    <%= artisan.craft_speciality %>
                                 </span>
 
-                                <a href="/artisans/1">
-                                    Profile →
-                                </a>
+                                <h3>
+                                    <%= artisan.display_name %>
+                                </h3>
+
+                                <div class="artisan-place">
+                                    <%= artisan.location %>, <%= artisan.state %>
+                                </div>
+
+                                <p>
+                                    <%= artisan.bio %>
+                                </p>
+
+                                <div class="artisan-card-footer">
+
+                                    <span>
+                                        <%= artisan.years_of_experience %> Years Experience
+                                    </span>
+
+                                    <a href="/artisans/<%= artisan.id %>">
+                                        Profile →
+                                    </a>
+
+                                </div>
 
                             </div>
 
-                        </div>
+                        </article>
 
-                    </article>
-
-
-                    <!-- ARTISAN 2 -->
-
-                    <article class="artisan-card">
-
-                        <a href="/artisans/2"
-                           class="artisan-card-image artisan-two">
-
-                            <span>ARTISAN</span>
-
-                            <div class="verified-mark">
-                                ✓
-                            </div>
-
-                        </a>
-
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                TEXTILES
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Chanderi, Madhya Pradesh
-                            </div>
-
-                            <p>
-                                Traditional handloom weaving.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    14 Products
-                                </span>
-
-                                <a href="/artisans/2">
-                                    Profile →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ARTISAN 3 -->
-
-                    <article class="artisan-card">
-
-                        <a href="/artisans/3"
-                           class="artisan-card-image artisan-three">
-
-                            <span>ARTISAN</span>
-
-                            <div class="verified-mark">
-                                ✓
-                            </div>
-
-                        </a>
-
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                POTTERY
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Raipur, Chhattisgarh
-                            </div>
-
-                            <p>
-                                Traditional clay and terracotta craft.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    6 Products
-                                </span>
-
-                                <a href="/artisans/3">
-                                    Profile →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ARTISAN 4 -->
-
-                    <article class="artisan-card">
-
-                        <a href="/artisans/4"
-                           class="artisan-card-image artisan-four">
-
-                            <span>ARTISAN</span>
-
-                            <div class="verified-mark">
-                                ✓
-                            </div>
-
-                        </a>
-
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                METALCRAFT
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Kondagaon, Chhattisgarh
-                            </div>
-
-                            <p>
-                                Traditional metalworking and sculpture.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    11 Products
-                                </span>
-
-                                <a href="/artisans/4">
-                                    Profile →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ARTISAN 5 -->
-
-                    <article class="artisan-card">
-
-                        <a href="/artisans/5"
-                           class="artisan-card-image artisan-five">
-
-                            <span>ARTISAN</span>
-
-                            <div class="verified-mark">
-                                ✓
-                            </div>
-
-                        </a>
-
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                JEWELLERY
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Odisha
-                            </div>
-
-                            <p>
-                                Traditional handcrafted jewellery.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    9 Products
-                                </span>
-
-                                <a href="/artisans/5">
-                                    Profile →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ARTISAN 6 -->
-
-                    <article class="artisan-card">
-
-                        <a href="/artisans/6"
-                           class="artisan-card-image artisan-six">
-
-                            <span>ARTISAN</span>
-
-                            <div class="verified-mark">
-                                ✓
-                            </div>
-
-                        </a>
-
-                        <div class="artisan-card-content">
-
-                            <span class="artisan-craft">
-                                TEXTILES
-                            </span>
-
-                            <h3>
-                                Artisan Name
-                            </h3>
-
-                            <div class="artisan-place">
-                                Rajasthan
-                            </div>
-
-                            <p>
-                                Traditional textile and weaving practices.
-                            </p>
-
-                            <div class="artisan-card-footer">
-
-                                <span>
-                                    7 Products
-                                </span>
-
-                                <a href="/artisans/6">
-                                    Profile →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
+                    <% }) %>
 
                 </div>
 

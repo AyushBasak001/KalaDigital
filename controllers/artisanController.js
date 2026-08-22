@@ -1,7 +1,21 @@
+import * as ArtisanService from "../services/ArtisanService.js";
+
 export const renderArtisansPage = async (req, res) => {
   try {
-    // 1. Render page
-    return res.render("artisan.ejs");
+
+    // 1. Get artisans
+    const artisanList = await ArtisanService.getAllArtisans();
+
+    // 2. Get featuredArtisan
+    let featuredArtisan = null;
+
+    if (artisanList.length > 0) {
+        featuredArtisan =
+            artisanList[Math.floor(Math.random() * artisanList.length)];
+    }
+    
+    // 3. Render page
+    return res.render("artisan.ejs", { featuredArtisan, artisanList });
 
   } catch (err) {
     console.error("GET /artisans error:", err.message);
